@@ -9,13 +9,7 @@ class Gudang extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'id_gudang',
-        'nama_gudang',
-        'alamat',
-        'kapasitas',
-        'status'
-    ];
+    protected $guarded;
 
     public function stok()
     {

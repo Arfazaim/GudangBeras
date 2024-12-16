@@ -9,13 +9,7 @@ class Pelanggan extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'id_pelanggan',
-        'nama_pelanggan',
-        'alamat',
-        'no_telepon',
-        'email'
-    ];
+    protected $guarded;
 
     public function transaksi()
     {

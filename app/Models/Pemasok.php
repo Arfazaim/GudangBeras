@@ -9,13 +9,7 @@ class Pemasok extends Model
 {
     use HasFactory;
 
-    protected $fillable = [
-        'id_pemasok',
-        'nama_pemasok',
-        'alamat',
-        'no_telepon',
-        'email'
-    ];
+    protected $guarded;
 
     public function produk()
     {

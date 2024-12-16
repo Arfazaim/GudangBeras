@@ -101,7 +101,7 @@
                             log out
                         </button>
                     </form>
-                    
+
                     <!-- end item -->
 
                 </div>
@@ -473,7 +473,7 @@
 
 
         </div>
-        <!-- End General Report -->
+        {{-- <!-- End General Report -->
 
         <!-- strat Analytics -->
         <div class="mt-6 grid grid-cols-2 gap-6 xl:grid-cols-1">
@@ -822,7 +822,7 @@
 
 
         </div>
-        <!-- end quick Info -->
+        <!-- end quick Info --> --}}
 
 
     </div>
