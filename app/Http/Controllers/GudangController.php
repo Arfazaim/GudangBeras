@@ -15,7 +15,7 @@ class GudangController extends Controller
 
     public function create()
     {
-        return view('gudangs.create');
+        return view('gudang.create');
     }
 
     public function store(Request $request)
@@ -27,7 +27,7 @@ class GudangController extends Controller
     public function edit($id)
     {
         $gudang = Gudang::find($id);
-        return view('gudangs.edit', compact('gudang'));
+        return view('gudang.edit', compact('gudang'));
     }
 
     public function update(Request $request, $id)

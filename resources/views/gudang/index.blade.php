@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Data Mahasiswa</title>
+    <title>Data Gudang</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
 </head>
@@ -32,7 +32,7 @@
                             <tbody>
                                 @foreach ($gudangs as $gudang)
                                     <tr>
-                                        <td>{{ $gudang->id_gudang }}</td>
+                                        <td>{{ $gudang->kode_gudang }}</td>
                                         <td>{{ $gudang->nama_gudang }}</td>
                                         <td>{{ $gudang->alamat }}</td>
                                         <td>{{ $gudang->kapasitas }}</td>
