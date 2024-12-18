@@ -17,7 +17,7 @@
         <tbody>
             @foreach($pemasoks as $pemasok)
                 <tr>
-                    <td>{{ $pemasok->id_pemasok }}</td>
+                    <td>{{ $pemasok->kode_pemasok }}</td>
                     <td>{{ $pemasok->nama_pemasok }}</td>
                     <td>{{ $pemasok->alamat }}</td>
                     <td>{{ $pemasok->no_telepon }}</td>

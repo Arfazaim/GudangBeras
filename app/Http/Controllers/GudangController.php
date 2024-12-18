@@ -34,7 +34,8 @@ class GudangController extends Controller
     {
         $gudang = Gudang::find($id);
         $gudang->update($request->all());
-        return redirect()->route('gudang.index');
+        return redirect()->route('gudang.index', compact('gudang'));
+
     }
 
     public function destroy($id)

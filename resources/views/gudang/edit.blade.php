@@ -13,7 +13,7 @@
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
                         <h1>Edit Gudang</h1>
-                        <form action="{{ route('gudang.edit', $gudang->id) }}" method="POST">
+                        <form action="{{ route('gudang.update', $gudang->id) }}" method="POST">
                             @csrf
                             @method('PUT')
                             <div class="form-group">
@@ -35,8 +35,8 @@
                             <div class="form-group">
                                 <label for="status">Status</label>
                                 <select name="status" class="form-control" required>
-                                    <option value="Aktif" {{ $gudang->status == 'Aktif' ? 'selected' : '' }}>Aktif</option>
-                                    <option value="Tidak Aktif" {{ $gudang->status == 'Tidak Aktif' ? 'selected' : '' }}>Tidak Aktif</option>
+                                    <option value="1" {{ $gudang->status == 'Aktif' ? 'selected' : '' }}>Aktif</option>
+                                    <option value="0" {{ $gudang->status == 'Tidak Aktif' ? 'selected' : '' }}>Tidak Aktif</option>
                                 </select>
                             </div>
                             <button type="submit" class="btn btn-primary">Update</button>

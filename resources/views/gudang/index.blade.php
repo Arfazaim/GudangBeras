@@ -1,16 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('dashboard')
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Data Gudang</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
-</head>
-
-<body style="background: lightgray">
+@section('content')
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
@@ -18,15 +8,15 @@
                     <div class="card-body">
                         <h1>Data Gudang</h1>
                         <a href="{{ route('gudang.create') }}" class="btn btn-primary">Tambah</a>
-                        <table class="table table-striped">
+                        <table class="table table-bordered text-wrap">
                             <thead>
                                 <tr>
-                                    <th>Kode Gudang</th>
-                                    <th>Nama Gudang</th>
-                                    <th>Alamat</th>
-                                    <th>Kapasitas</th>
-                                    <th>Status</th>
-                                    <th>Aksi</th>
+                                    <th scope="col" class="border-1 border-black">Kode Gudang</th>
+                                    <th scope="col">Nama Gudang</th>
+                                    <th scope="col" class="px-5">Alamat</th>
+                                    <th scope="col">Kapasitas</th>
+                                    <th scope="col">Status</th>
+                                    <th scope="col">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -34,7 +24,7 @@
                                     <tr>
                                         <td>{{ $gudang->kode_gudang }}</td>
                                         <td>{{ $gudang->nama_gudang }}</td>
-                                        <td>{{ $gudang->alamat }}</td>
+                                        <td class="px-5">{{ Str::limit($gudang->alamat, 15) }}</td>
                                         <td>{{ $gudang->kapasitas }}</td>
                                         <td>{{ $gudang->status ? 'Aktif' : 'Nonaktif' }}</td>
                                         <td>
@@ -56,17 +46,4 @@
             </div>
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
-    <script>
-        //message with toastr
-        @if (session()->has('success'))
-            toastr.success('{{ session('success') }}', 'BERHASIL!');
-        @elseif (session()->has('error'))
-            toastr.error('{{ session('error') }}', 'GAGAL!');
-        @endif
-    </script>
-</body>
-
-</html>
+@endsection
