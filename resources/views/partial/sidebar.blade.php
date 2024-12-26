@@ -24,6 +24,26 @@
         <i class="fad fa-shopping-cart text-xs mr-2"></i>
         Pelanggan
     </a>
+    <a href="{{ route('pemasok.index') }}"
+        class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+        <i class="fad fa-shopping-cart text-xs mr-2"></i>
+        Pemasok
+    </a>
+    <a href="{{ route('produk.index') }}"
+        class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+        <i class="fad fa-shopping-cart text-xs mr-2"></i>
+        Produk
+    </a>
+    <a href="{{ route('stok.index') }}"
+        class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+        <i class="fad fa-shopping-cart text-xs mr-2"></i>
+        stok
+    </a>
+    <a href="{{ route('transaksi.index') }}"
+        class="mb-3 capitalize font-medium text-sm hover:text-teal-600 transition ease-in-out duration-500">
+        <i class="fad fa-shopping-cart text-xs mr-2"></i>
+        Transaksi
+    </a>
     <!-- end link -->
 
     <p class="uppercase text-xs text-gray-600 mb-4 mt-4 tracking-wider">apps</p>

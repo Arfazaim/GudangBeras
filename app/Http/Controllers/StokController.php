@@ -10,12 +10,12 @@ class StokController extends Controller
     public function index()
     {
         $stoks = Stok::all();
-        return view('stoks.index', compact('stoks'));
+        return view('stok.index', compact('stoks'));
     }
 
     public function create()
     {
-        return view('stoks.create');
+        return view('stok.create');
     }
 
     public function store(Request $request)
@@ -27,7 +27,7 @@ class StokController extends Controller
     public function edit($id)
     {
         $stok = Stok::find($id);
-        return view('stoks.edit', compact('stok'));
+        return view('stok.edit', compact('stok'));
     }
 
     public function update(Request $request, $id)

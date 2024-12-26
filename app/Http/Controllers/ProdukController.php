@@ -10,12 +10,12 @@ class ProdukController extends Controller
     public function index()
     {
         $produks = Produk::all();
-        return view('produks.index', compact('produks'));
+        return view('produk.index', compact('produks'));
     }
 
     public function create()
     {
-        return view('produks.create');
+        return view('produk.create');
     }
 
     public function store(Request $request)
@@ -27,7 +27,7 @@ class ProdukController extends Controller
     public function edit($id)
     {
         $produk = Produk::find($id);
-        return view('produks.edit', compact('produk'));
+        return view('produk.edit', compact('produk'));
     }
 
     public function update(Request $request, $id)

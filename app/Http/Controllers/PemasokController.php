@@ -10,12 +10,12 @@ class PemasokController extends Controller
     public function index()
     {
         $pemasoks = Pemasok::all();
-        return view('pemasoks.index', compact('pemasoks'));
+        return view('pemasok.index', compact('pemasoks'));
     }
 
     public function create()
     {
-        return view('pemasoks.create');
+        return view('pemasok.create');
     }
 
     public function store(Request $request)
@@ -27,7 +27,7 @@ class PemasokController extends Controller
     public function edit($id)
     {
         $pemasok = Pemasok::find($id);
-        return view('pemasoks.edit', compact('pemasok'));
+        return view('pemasok.edit', compact('pemasok'));
     }
 
     public function update(Request $request, $id)
