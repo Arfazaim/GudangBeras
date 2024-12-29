@@ -1,6 +1,5 @@
-@extends('layouts.app')
+@extends('dashboard')
 
-@section('title', 'Tambah Pemasok')
 
 @section('content')
     <div class="container">
@@ -10,7 +9,7 @@
                     <div class="card-header">Tambah Pemasok</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('pemasoks.store') }}">
+                        <form method="POST" action="{{ route('pemasok.store') }}">
                             @csrf
 
                             <div class="form-group">

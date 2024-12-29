@@ -1,6 +1,5 @@
-@extends('layouts.app')
+@extends('dashboard')
 
-@section('title', 'Edit Pemasok')
 
 @section('content')
     <div class="container">
