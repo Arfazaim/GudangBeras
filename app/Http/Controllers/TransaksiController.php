@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gudang;
+use App\Models\Pelanggan;
+use App\Models\Produk;
 use App\Models\Transaksi;
 use Illuminate\Http\Request;
 
@@ -9,13 +12,23 @@ class TransaksiController extends Controller
 {
     public function index()
     {
-        $transaksis = Transaksi::all();
+        $transaksis = Transaksi::with('gudang', 'produk', 'pelanggan')->get();
         return view('transaksi.index', compact('transaksis'));
     }
 
+
     public function create()
     {
-        return view('transaksi.create');
+        $gudangs = Gudang::all();
+    $produks = Produk::all();
+    $pelanggans = Pelanggan::all();
+
+    return view('transaksi.create', [
+        'gudangs' => $gudangs,
+        'produks' => $produks,
+        'pelanggans' => $pelanggans
+    ]);
+
     }
 
     public function store(Request $request)
