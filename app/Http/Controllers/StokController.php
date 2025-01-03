@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Gudang;
+use App\Models\Produk;
 use App\Models\Stok;
 use Illuminate\Http\Request;
 
@@ -15,8 +17,12 @@ class StokController extends Controller
 
     public function create()
     {
-        return view('stok.create');
+        $gudangs = Gudang::all();
+        $produks = Produk::all();
+
+        return view('stok.create', compact('gudangs', 'produks'));
     }
+
 
     public function store(Request $request)
     {
@@ -27,7 +33,10 @@ class StokController extends Controller
     public function edit($id)
     {
         $stok = Stok::find($id);
-        return view('stok.edit', compact('stok'));
+        $gudangs = Gudang::all();
+        $produks = Produk::all();
+
+        return view('stok.edit', compact('stok', 'gudangs', 'produks'));
     }
 
     public function update(Request $request, $id)
