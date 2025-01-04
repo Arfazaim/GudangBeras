@@ -52,7 +52,7 @@
                                 <label for="total_harga">Total Harga:</label>
                                 <input type="number" class="form-control" id="total_harga" name="total_harga">
                             </div>
-
+{{-- mumet --}}
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </form>
                     </div>
