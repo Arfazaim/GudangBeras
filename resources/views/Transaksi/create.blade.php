@@ -50,13 +50,31 @@
 
                             <div class="form-group">
                                 <label for="total_harga">Total Harga:</label>
-                                <input type="number" class="form-control" id="total_harga" name="total_harga">
+                                <input type="number" class="form-control" id="total_harga" name="total_harga" readonly>
                             </div>
-{{-- mumet --}}
+
                             <button type="submit" class="btn btn-primary">Simpan</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
-    @endsection
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const jumlahInput = document.getElementById('jumlah');
+            const hargaInput = document.getElementById('harga');
+            const totalHargaInput = document.getElementById('total_harga');
+
+            function calculateTotal() {
+                const jumlah = parseFloat(jumlahInput.value) || 0;
+                const harga = parseFloat(hargaInput.value) || 0;
+                totalHargaInput.value = jumlah * harga;
+            }
+
+            jumlahInput.addEventListener('input', calculateTotal);
+            hargaInput.addEventListener('input', calculateTotal);
+        });
+    </script>
+@endsection
