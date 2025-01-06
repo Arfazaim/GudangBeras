@@ -38,7 +38,7 @@ class TransaksiController extends Controller
     {
         // Validasi input
         $validated = $request->validate([
-            'gudang_id' => 'required|exists:gudangs,kode_gudang',
+            'gudang_id' => 'required|exists:gudangs,id',
             'produk_id' => 'required|exists:produks,id',
             'pelanggan_id' => 'required|exists:pelanggans,id',
             'jumlah' => 'required|numeric|min:1',
@@ -49,7 +49,8 @@ class TransaksiController extends Controller
         // Simpan data
         Transaksi::create($validated);
 
-        return redirect()->route('transaksi.index')->with('success', 'Transaksi berhasil disimpan.');
+        return redirect()->route('transaksi.index');
+        
     }
 
     /**
