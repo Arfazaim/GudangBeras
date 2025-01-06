@@ -8,7 +8,7 @@
                     <div class="card-body">
                         <h1>Data Gudang</h1>
                         <a href="{{ route('gudang.create') }}" class="btn btn-primary">Tambah</a>
-                        <table class="table table-bordered text-wrap">
+                        <table class="table-fixed">
                             <thead>
                                 <tr>
                                     <th scope="col" class="border-1 border-black">Kode Gudang</th>
@@ -24,7 +24,7 @@
                                     <tr>
                                         <td>{{ $gudang->kode_gudang }}</td>
                                         <td>{{ $gudang->nama_gudang }}</td>
-                                        <td class="px-5">{{ Str::limit($gudang->alamat, 15) }}</td>
+                                        <td class="px-5">{{ Str::limit($gudang->alamat) }}</td>
                                         <td>{{ $gudang->kapasitas }}</td>
                                         <td>{{ $gudang->status ? 'Aktif' : 'Nonaktif' }}</td>
                                         <td>
@@ -46,4 +46,7 @@
             </div>
         </div>
     </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
 @endsection

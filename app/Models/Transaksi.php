@@ -11,14 +11,14 @@ class Transaksi extends Model
 
     protected $guarded;
 
+    public function gudang()
+    {
+        return $this->belongsTo(Gudang::class, 'gudang_id', 'kode_gudang');
+    }
+
     public function produk()
     {
         return $this->belongsTo(Produk::class);
-    }
-
-    public function gudang()
-    {
-        return $this->belongsTo(Gudang::class);
     }
 
     public function pelanggan()
@@ -26,4 +26,3 @@ class Transaksi extends Model
         return $this->belongsTo(Pelanggan::class);
     }
 }
-
